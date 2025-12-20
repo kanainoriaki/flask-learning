@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h2>見積一覧</h2>
+
+<a href="{{ url_for('new_estimate') }}">＋ 新規見積</a>
+
+<table>
+  <tr>
+    <th>ID</th><th>顧客</th><th>施設</th><th>タイトル</th><th></th>
+  </tr>
+  {% for e in estimates %}
+  <tr>
+    <td>{{ e.id }}</td>
+    <td>{{ e.customer_name }}</td>
+    <td>{{ e.facility_type }}</td>
+    <td>
+      <a href="{{ url_for('show_estimate', estimate_id=e.id) }}">
+        {{ e.title }}
+      </a>
+    </td>
+    <td>
+      <a href="{{ url_for('edit_estimate', estimate_id=e.id) }}">編集</a>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+
+{% endblock %}

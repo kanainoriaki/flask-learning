@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>見積CRUD PoC</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<header>
+  <h1><a href="{{ url_for('list_estimates') }}">見積CRUD</a></h1>
+  <nav>
+    <a href="{{ url_for('list_estimates') }}">一覧</a>
+    <a href="{{ url_for('new_estimate') }}">新規作成</a>
+  </nav>
+</header>
+
+<main>
+  {% block content %}{% endblock %}
+</main>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h2>{{ e.title }}</h2>
+
+<ul>
+  <li>顧客：{{ e.customer_name }}</li>
+  <li>施設：{{ e.facility_type }}</li>
+  <li>工数：{{ e.work_hours }}</li>
+  <li>費用：{{ e.cost }} 円</li>
+</ul>
+
+<p>{{ e.note }}</p>
+
+<a href="{{ url_for('edit_estimate', estimate_id=e.id) }}">編集</a>
+
+{% endblock %}
